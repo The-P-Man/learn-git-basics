@@ -116,33 +116,40 @@ To add to previous commit,
 ```
 > git add .
 > git commit --amend
-
-To completely undo a commit,
 ```
-git reset
+To roll back to an earlier version,
+```
+git reset --hard 38afe0d		# Very destructive. Use with caution!
+```
+Finally, if we want to undo a change we made further back in history,
+```
+git revert 38afe0d
+```
 
 
-
-
-##### Checking that status of your local repository - shows changed but not added files in red
-		git status
-
-##### Creating a new branch for you to work on
-		git branch <new branch name>
-
-##### See all branches in your remote repository
-		git branch -a
-
-##### Moving onto a branch
-		git checkout <branch name>
-
-##### Deleting a branch
-		git branch -d <branch name>
-
-##### Moving files while preserving git history
-		git mv <source> <destination>
+## Learning to Branch Out
+Creating a new branch for you to work on
+```
+> git branch <new branch name>
+```
+See all branches in your remote repository
+```
+> git branch -a
+```
+Moving onto a branch
+```
+> git checkout <branch name>
+```
+Deleting a branch
+```
+> git branch -d <branch name>
+```
+Moving files while preserving git history
+```
+> git mv <source> <destination>
+ ```
  
- 
-##### making a new branch whilst moving into it AT THE SAME TIME
-		git checkout -b <new branch name>
-
+making a new branch whilst moving into it AT THE SAME TIME
+```
+> git checkout -b <new branch name>
+```
