@@ -86,7 +86,32 @@ To see a history of changes,
 ```
 
 To see exactly what the changes are,
-> git diff
+```
+> git diff 					# Changes between repository and working directory
+> git diff --staged 		# Changes between repository and staged index.
+> git diff --color-words 	# Changes colored by word (not line)
+```
+
+To see exact changes of previous commits
+```
+> git show 38afe0d
+```
+Where 38afe0d is a sha# which can be found when using `> git log`.
+
+To delete or move a file,
+```
+> git rm file1.txt
+> git commit -m "deleting file1.txt"
+```
+```
+> git mv old.txt new.txt
+> git commit -m "renaming from old.txt to new.txt"
+```
+
+To restore changes,
+```
+> git restore
+> git restore --staged
 
 
 
