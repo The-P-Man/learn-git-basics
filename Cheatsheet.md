@@ -108,10 +108,11 @@ To delete or move a file,
 > git commit -m "renaming from old.txt to new.txt"
 ```
 
-To restore changes,
+If you make a mistake (working directory is wrong and repo is correct)
 ```
-> git restore
-> git restore --staged
+> git restore filename
+
+
 
 
 
