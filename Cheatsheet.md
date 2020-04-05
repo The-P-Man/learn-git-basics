@@ -70,6 +70,11 @@ Or add and commit changes in a single command,
 ```
 git commit -am "Another descriptive label of changes
 ```
+Or to add to previous commit,
+```
+> git add .
+> git commit --amend
+```
 Tips,
 * Use `> git status` often to check which files need to be staged and committed.
 * Add similar edits together under a single commit.
@@ -78,18 +83,18 @@ Tips,
 To see a history of changes,
 ```
 > git log
-> git log -n 3    				# Last 5 changes
-> git log --since=2020-01-01    # Changes since the start of 2020
-> git log --author=philip		# Changes made by me
-> git log --grep regex          # Changes that match the regex
-> git log --oneline 			# Succint format
+> git log -n 3    						# Last 5 changes
+> git log --since=2020-01-01    		# Changes since the start of 2020
+> git log --author=philip				# Changes made by me
+> git log --grep regex          		# Changes that match the regex
+> git log --oneline 					# Succint format
 ```
 
 To see exactly what the changes are,
 ```
-> git diff 					# Changes between repository and working directory
-> git diff --staged 		# Changes between repository and staged index.
-> git diff --color-words 	# Changes colored by word (not line)
+> git diff 						# Changes between repository and working directory
+> git diff --staged 			# Changes between repository and staged index.
+> git diff --color-words 		# Changes colored by word (not line)
 ```
 
 To see exact changes of previous commits
@@ -108,41 +113,53 @@ To delete or move a file,
 > git commit -m "renaming from old.txt to new.txt"
 ```
 
+## When you Accidentally Delete Everything
+
 If you make a mistake (working directory is wrong and repo is correct)
 ```
 > git restore file.txt --source head
 ```
-To add to previous commit,
+To roll back to an earlier version,
 ```
-> git add .
-> git commit --amend
-
-To completely undo a commit,
+git reset --hard 38afe0d		# Very destructive. Use with caution!
 ```
-git reset
+Finally, if we want to undo a change we made further back in history,
+```
+git revert 38afe0d
+```
 
 
-
-
-##### Checking that status of your local repository - shows changed but not added files in red
-		git status
-
-##### Creating a new branch for you to work on
-		git branch <new branch name>
-
-##### See all branches in your remote repository
-		git branch -a
-
-##### Moving onto a branch
-		git checkout <branch name>
-
-##### Deleting a branch
-		git branch -d <branch name>
-
-##### Moving files while preserving git history
-		git mv <source> <destination>
+## Learning to Branch Out
+Creating a new branch for you to work on
+```
+> git branch <new branch name>
+```
+See all branches in your remote repository
+```
+> git branch -a
+```
+Moving onto a branch
+```
+> git checkout <branch name>
+```
+Deleting a branch
+```
+> git branch -d <branch name>
+```
+Moving files while preserving git history
+```
+> git mv <source> <destination>
+ ```
  
- 
-##### making a new branch whilst moving into it AT THE SAME TIME
-		git checkout -b <new branch name>
+making a new branch whilst moving into it AT THE SAME TIME
+```
+> git checkout -b <new branch name>
+```
+
+## Push It
+
+Finally, upload your changes to a remote repository on github,
+```
+git push
+```
 
