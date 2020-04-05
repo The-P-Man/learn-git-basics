@@ -110,8 +110,16 @@ To delete or move a file,
 
 If you make a mistake (working directory is wrong and repo is correct)
 ```
-> git restore filename
+> git restore file.txt --source head
+```
+To add to previous commit,
+```
+> git add .
+> git commit --amend
 
+To completely undo a commit,
+```
+git reset
 
 
 
