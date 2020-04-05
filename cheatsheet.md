@@ -75,8 +75,18 @@ Tips,
 * Add similar edits together under a single commit.
 * Use `> code` or `> code newfile.txt` to open up Visual Studio Code from the command line.
 
+To see a history of changes,
+```
+> git log
+> git log -n 3    				# Last 5 changes
+> git log --since=2020-01-01    # Changes since the start of 2020
+> git log --author=philip		# Changes made by me
+> git log --grep regex          # Changes that match the regex
+> git log --oneline 			# Succint format
+```
 
-
+To see exactly what the changes are,
+> git diff
 
 
 
