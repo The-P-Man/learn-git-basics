@@ -119,14 +119,21 @@ If you make a mistake (working directory is wrong and repo is correct)
 ```
 > git restore file.txt --source head
 ```
-To roll back to an earlier version,
+To roll back to an earlier version (and lose any current changes),
 ```
 git reset --hard 38afe0d		# Very destructive. Use with caution!
 ```
+To undo the last commit, but keep our current edits in your working directory _and_ keep the changes in your index (essentially files stay the same but it allows you to merge commits) use,
+```
+git reset --soft 38afe0d
+git commit -m "descriptive label"		# add the commits back as one
+```
+
 Finally, if we want to undo a change we made further back in history,
 ```
 git revert 38afe0d
 ```
+
 
 
 ## Learning to Branch Out
